@@ -1,5 +1,6 @@
 from alphabet import alphabet, alph_key
 
+
 # encode function will encode message using the rotate method from the collection library
 # rotate method moves list items to the right depending on spaces.
 def encode(message, shift):
@@ -12,5 +13,7 @@ def encode(message, shift):
         else:
             index = alph_key.get(letter)
             encrypted_message.append(alphabet[int(index)])
+
+    alphabet.rotate(-shift)
 
     return "".join(encrypted_message)
